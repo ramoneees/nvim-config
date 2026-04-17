@@ -11,21 +11,25 @@ return {
     opts = {
       strategies = {
         chat = {
-          adapter = "anthropic",
+          adapter = "litellm",
         },
         inline = {
-          adapter = "anthropic",
+          adapter = "litellm",
         },
         agent = {
-          adapter = "anthropic",
+          adapter = "litellm",
         },
       },
       adapters = {
-        anthropic = function()
-          return require("codecompanion.adapters").extend("anthropic", {
+        litellm = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              url = "https://litellm.ramoneees.com",
+              api_key = "LITELLM_API_KEY",
+            },
             schema = {
               model = {
-                default = "claude-sonnet-4-20250514",
+                default = "glm-5.1",
               },
             },
           })

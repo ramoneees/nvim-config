@@ -4,6 +4,7 @@
 local opt = vim.opt
 
 opt.scrolloff = 8
+opt.autowriteall = true
 
 -- Clojure/Lisp: Conjure keybindings under <localleader>
 vim.g.conjure_map_prefix = "<localleader>"

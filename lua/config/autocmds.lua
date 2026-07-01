@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.opt_local.tabstop = 4
     vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
   end,
 })
 
@@ -26,11 +27,12 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.opt_local.tabstop = 4
     vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
   end,
 })
 
--- Auto-save on focus lost (replaces VSCode autoSave onFocusChange)
-vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
+-- Auto-save on focus lost (autowriteall covers :next/:make; FocusLost covers window switches)
+vim.api.nvim_create_autocmd("FocusLost", {
   callback = function()
     if vim.bo.modified and vim.bo.buftype == "" then
       vim.cmd("silent! write")

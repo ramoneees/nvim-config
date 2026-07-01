@@ -21,27 +21,25 @@ return {
         },
       },
       adapters = {
-        http = {
-          litellm = function()
-            return require("codecompanion.adapters.http").extend("openai_compatible", {
-              env = {
-                url = "https://litellm.ramoneees.com",
-                api_key = "LITELLM_API_KEY",
+        litellm = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              url = "https://litellm.ramoneees.com",
+              api_key = "LITELLM_API_KEY",
+            },
+            schema = {
+              model = {
+                default = "glm-5.1",
               },
-              schema = {
-                model = {
-                  default = "glm-5.1",
-                },
-              },
-            })
-          end,
-        },
+            },
+          })
+        end,
       },
     },
     keys = {
-      { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", desc = "CodeCompanion Chat" },
-      { "<leader>ca", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion Actions" },
-      { "<leader>ci", "<cmd>CodeCompanion<cr>", desc = "CodeCompanion Inline", mode = { "n", "v" } },
+      { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", desc = "AI Chat" },
+      { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "AI Actions" },
+      { "<leader>ai", "<cmd>CodeCompanion<cr>", desc = "AI Inline", mode = { "n", "v" } },
     },
   },
 }

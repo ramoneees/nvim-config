@@ -1,7 +1,4 @@
 return {
-  -- vim-dadbod: database client (replaces VSCode database-client extension)
-  { "tpope/vim-dadbod" },
-
   -- vim-dadbod-ui: visual database explorer
   {
     "kristijanhusak/vim-dadbod-ui",

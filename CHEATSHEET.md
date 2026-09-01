@@ -148,3 +148,26 @@ Tested live against a real `lein repl` in `arc-exam/` — `lein repl :headless` 
 **Practical loop:** write a `defn`, `\er` to define it, move cursor into a call expression and `\ee` (or just type `(my-fn args)` on a scratch line and `\ee`) to try it, `\ve` if it blows up. Everything shows up live in the log (`\lg` to bring it back if you closed it).
 
 **Session management** (rarely needed day-to-day): `\ss` prompt to pick among multiple REPL sessions, `\sf` fresh session, `\cd` disconnect.
+
+## Org Mode & Pomodoro
+
+Task management (nvim-orgmode) and a focus timer (pomo.nvim) in one place. Org files live in `~/org/**/*`; capture always lands in `~/org/refile.org` unless refiled elsewhere. Pomodoro is configured as a 90-minute work block + 15-minute break (ultradian rhythm, not classic 25/5) — `<leader>pp` runs one full cycle, press it again to start the next.
+
+| Key | Action |
+|---|---|
+| `<leader>oc` | Capture — `t` for Task, `n` for Note |
+| `<leader>oa` | Agenda prompt — `a` weekly agenda, `t` global TODO list |
+| `<leader>oxi` / `<leader>oxo` | Clock in / out on headline under cursor (org buffers only) |
+| `<leader>pp` | Start Pomodoro (90m work + 15m break) — also clocks in if cursor is on an org headline |
+| `<leader>ps` | Stop Pomodoro early — also clocks out |
+| `<leader>pb` | Standalone 5-minute break (no session/clock involved) |
+
+**Editing an org buffer** (`~/org/refile.org` etc.):
+
+| Key | Action |
+|---|---|
+| `<Tab>` | Cycle fold/visibility on headline |
+| `Shift-Right` / `Shift-Left` | Cycle TODO state: `TODO → NEXT → DONE` |
+| `I` / `O` / `X` (inside agenda) | Clock in / out / cancel on item under cursor |
+
+**Typical loop:** `<leader>oc` → `t` to capture a task into `refile.org`, put cursor on it, `<leader>pp` to clock in and start the 90/15 cycle, `<leader>ps` when done (or let the break notification fire on its own).

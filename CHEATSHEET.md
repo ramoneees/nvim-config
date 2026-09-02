@@ -77,11 +77,37 @@ Inline, without leaving the buffer (gitsigns):
 | `<leader>ghr` | Reset hunk |
 | `<leader>ghp` | Preview hunk inline |
 | `<leader>ghb` | Blame current line |
-| `<leader>gd` | Diff view (hunks) |
+| `<leader>gd` | Diff view (Diffview — full file-tree diff) |
+| `<leader>gv` | Git diff hunks (Snacks picker — quick fuzzy list) |
 | `<leader>gs` | Git status |
 | `<leader>gh` | Current file history |
 
 **Quick commit & push:** `<leader>gg` → `a` (stage) → `c` (commit) → `P` (push)
+
+## AI Assistants
+
+Two separate AI plugins, deliberately on separate prefixes so their keys never fight each other: `<leader>a*` is Claude Companion (claudecode.nvim — talks to this Claude Code CLI session), `<leader>C*` is CodeCompanion (routed through LiteLLM, model-agnostic).
+
+**Claude Companion** (`<leader>a*`):
+
+| Key | Action |
+|---|---|
+| `<leader>ac` | Toggle Claude |
+| `<leader>af` | Focus Claude |
+| `<leader>ar` | Resume Claude |
+| `<leader>aC` | Continue Claude |
+| `<leader>ab` | Add current buffer |
+| `<leader>as` (visual) | Send selection to Claude |
+| `<leader>aa` | Accept diff |
+| `<leader>ad` | Deny diff |
+
+**CodeCompanion** (`<leader>C*`):
+
+| Key | Action |
+|---|---|
+| `<leader>Cc` | Toggle chat |
+| `<leader>Ca` | Actions menu |
+| `<leader>Ci` | Inline (normal or visual selection) |
 
 ## Clojure Structural Editing
 

@@ -36,10 +36,14 @@ return {
         end,
       },
     },
+    -- Prefix is <leader>C (not <leader>a) to avoid clashing with claudecode.nvim,
+    -- which owns <leader>a* (Toggle/Focus/Resume/Accept-diff Claude). Both plugins
+    -- declaring the same <leader>a* keys resolved non-deterministically depending
+    -- on lazy.nvim's plugin-table iteration order across restarts.
     keys = {
-      { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", desc = "AI Chat" },
-      { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "AI Actions" },
-      { "<leader>ai", "<cmd>CodeCompanion<cr>", desc = "AI Inline", mode = { "n", "v" } },
+      { "<leader>Cc", "<cmd>CodeCompanionChat Toggle<cr>", desc = "CodeCompanion Chat" },
+      { "<leader>Ca", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion Actions" },
+      { "<leader>Ci", "<cmd>CodeCompanion<cr>", desc = "CodeCompanion Inline", mode = { "n", "v" } },
     },
   },
 }
